@@ -31,7 +31,7 @@ public class PasswordManager : MonoBehaviour
 
     public void pressOkButton()
     {
-        if (PlayerPrefs.GetString("Password") != null)
+        if (PlayerPrefs.HasKey("Password"))
         {
             if(passwordInputField.text == PlayerPrefs.GetString("Password"))
             {
