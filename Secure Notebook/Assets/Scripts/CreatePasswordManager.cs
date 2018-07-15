@@ -10,12 +10,15 @@ public class CreatePasswordManager : MonoBehaviour
     public InputField confirmPasswordField;
     public GameObject passwordDidNotMatchNotification;
     public Button okButton;
+    public GameObject passwordCreatedNotification;
 
 	// Use this for initialization
 	void Start ()
     {
         passwordDidNotMatchNotification.SetActive(false);
-	}
+        passwordCreatedNotification.SetActive(false);
+
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -30,13 +33,17 @@ public class CreatePasswordManager : MonoBehaviour
         }
 	}
 
-    public void pressOkButton()
+    public void pressCreateButton()
     {
         if(newPasswordField.text != "" && confirmPasswordField.text != "")
         {
             if(newPasswordField.text == confirmPasswordField.text)
             {
-
+                PlayerPrefs.SetString("Password", newPasswordField.text);
+                newPasswordField.text = "";
+                confirmPasswordField.text = "";
+                createPasswordPanel.SetActive(false);
+                passwordCreatedNotification.SetActive(true);
             }
             else
             {
@@ -45,5 +52,11 @@ public class CreatePasswordManager : MonoBehaviour
                 passwordDidNotMatchNotification.SetActive(true);
             }
         }
+    }
+
+    //when password is successfuly created
+    public void pressOkButton()
+    {
+        passwordCreatedNotification.SetActive(false);
     }
 }
