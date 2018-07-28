@@ -5,9 +5,11 @@ using UnityEngine;
 public class LockSettingsManager : MonoBehaviour
 {
     public GameObject LockSettingsMenuLayer;
+    public GameObject SetPasswordLayer;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 		
 	}
 	
@@ -16,8 +18,14 @@ public class LockSettingsManager : MonoBehaviour
 		
 	}
 
-    public void onBackButtonClick()
+    public void onPasswordButtonClick()
     {
         LockSettingsMenuLayer.SetActive(false);
+        SetPasswordLayer.SetActive(true);
+    }
+
+    public void onBackButtonClick()
+    {
+        LockSettingsMenuLayer.SetActive(false);      
     }
 }
