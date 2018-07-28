@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NewLock : MonoBehaviour
+//edit password via settings
+public class NewPassword : MonoBehaviour
 {
     public GameObject changePasswordPanel;
     public InputField newPasswordField;
