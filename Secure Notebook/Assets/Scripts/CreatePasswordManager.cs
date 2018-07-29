@@ -44,6 +44,8 @@ public class CreatePasswordManager : MonoBehaviour
                 confirmPasswordField.text = "";
                 createPasswordPanel.SetActive(false);
                 passwordCreatedNotification.SetActive(true);
+                PlayerPrefs.SetInt("FirstTime", 1);
+                PlayerPrefs.SetInt("LockType", 1);
             }
             else
             {

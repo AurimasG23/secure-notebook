@@ -34,6 +34,7 @@ public class NewPassword : MonoBehaviour
         }
     }
 
+    //set password
     public void pressCreateButton()
     {
         if (newPasswordField.text != "" && confirmPasswordField.text != "")
